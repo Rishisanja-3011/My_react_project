@@ -61,7 +61,7 @@ function Contact({ email }) {
               className="form-input"
               value={contactEmail}
               onChange={(e) => setContactEmail(e.target.value)}
-              placeholder="rishi@example.com"
+              placeholder="rishisanja99@example.com"
               required
             />
           </div>

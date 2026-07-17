@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import Home from './components/Home'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
+import Feedback from './components/FEEDBACK'
 import NotFound from './components/NotFound'
 
 const portfolio = {
@@ -76,6 +77,14 @@ function App() {
           element={
             <main className="page-content">
               <Contact email={portfolio.email} />
+            </main>
+          }
+        />
+        <Route
+          path="/feedback"
+          element={
+            <main className="page-content">
+              <Feedback />
             </main>
           }
         />

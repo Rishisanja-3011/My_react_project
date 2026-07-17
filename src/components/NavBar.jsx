@@ -48,6 +48,14 @@ function NavBar({ themeColor, onThemeChange }) {
               Contact
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/feedback"
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+            >
+              Feedback
+            </NavLink>
+          </li>
         </ul>
         <div className="nav-controls">
           <div className="color-picker">

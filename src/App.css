@@ -646,3 +646,134 @@
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ─── Feedback Component Styles ─── */
+
+.star-rating-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--color-primary-glow);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-sm);
+}
+
+.star-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.star-category {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  min-width: 110px;
+}
+
+.stars-container {
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--color-card-border);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  user-select: none;
+  line-height: 1;
+}
+
+.star:hover,
+.star.star-hovered {
+  color: #f59e0b;
+  transform: scale(1.2);
+}
+
+.star.star-selected {
+  color: #f59e0b;
+}
+
+.star-label-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #f59e0b;
+  background-color: rgba(245, 158, 11, 0.1);
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+}
+
+/* Average preview bar */
+.average-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, var(--color-primary-glow), rgba(245, 158, 11, 0.08));
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-sm);
+  animation: fadeIn 0.3s ease;
+}
+
+.average-label {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.average-score {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+/* Feedback success summary */
+.feedback-summary-stars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: var(--color-primary-glow);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-sm);
+  padding: 16px 24px;
+  width: 100%;
+  max-width: 360px;
+  text-align: left;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.summary-cat {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.summary-stars {
+  letter-spacing: 2px;
+}
+
+/* Warning border on textarea near limit */
+.limit-warning-border {
+  border-color: #f43f5e !important;
+}
+
+/* Disabled submit button */
+.submit-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
