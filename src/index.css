@@ -39,7 +39,8 @@
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-[data-theme="dark"] {
+[data-theme="dark"],
+.dark {
   /* Dark Theme Colors */
   --color-bg: #0b0f19;
   --color-card-bg: rgba(17, 24, 39, 0.7);

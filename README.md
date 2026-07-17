@@ -1,16 +1,81 @@
-# React + Vite
+# Responsive React Student Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A state-of-the-art, fully responsive, and glassmorphic Student Portfolio built with **React**, **React Router v6**, and **Vite**.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Client-Side Routing**: Smooth, multi-page routing via `react-router-dom` with zero page reloads.
+- **Dynamic Theming**: Custom header background color picker state along with a persistent, system-integrated dark/light mode toggle.
+- **Controlled Contact Form**: Stateful form capturing user input in real-time, complete with a dynamic character counter (limit 500 characters) and togglable help/writing advice tooltip.
+- **404 Fallback page**: Custom, polished 404 Error screen with single-click navigation redirecting back to home.
+- **Glassmorphic UI**: High-end modern styling utilizing CSS variables, responsive grids, hover-scale animations, and backdrop-blur filters.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📁 Project Architecture & Routes
 
-## Expanding the ESLint configuration
+```text
+my-react-app/
+├── src/
+│   ├── main.jsx          # Entry point (wrapped in BrowserRouter)
+│   ├── App.jsx           # Main App coordinator managing routes
+│   ├── App.css           # Component layouts and style presets
+│   ├── index.css         # Global tokens and light/dark theme variables
+│   └── components/       # Custom page and layout components
+│       ├── Home.jsx      # Home route (renders Header, About, Skills)
+│       ├── Projects.jsx  # Projects showcase page route
+│       ├── Contact.jsx   # Contact form page route (controlled state)
+│       ├── NotFound.jsx  # Fallback 404 error page route
+│       ├── Header.jsx    # Hero header section with theme picking
+│       ├── About.jsx     # Personal profile details
+│       ├── Skills.jsx    # Tech pill listing tags
+│       ├── NavBar.jsx    # Responsive header navigation
+│       └── Footer.jsx    # Copywriter footer section
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Route Definitions
+- `Route: "/"` → Renders the homepage layout, profile details, and tech skills.
+- `Route: "/projects"` → Renders the portfolio projects showcase page.
+- `Route: "/contact"` → Renders the controlled contact form page.
+- `Route: "*"` → Renders a custom 404 Page Not Found error card.
+
+---
+
+## 🛠️ Technical Stack
+
+- **Framework**: React 19
+- **Build Tool**: Vite 8
+- **Routing Engine**: React Router v6 (`react-router-dom`)
+- **Styling**: Pure Custom CSS (utilizing CSS custom properties, backdrop-filters, and media queries)
+- **Formatting & Linting**: ESLint, Prettier
+
+---
+
+## 💻 Local Setup & Execution
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Rishisanja-3011/My_react_project.git
+   cd my-react-app
+   ```
+
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Run Local Dev Server**:
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:5173` (or the specified local port) in your browser.
+
+4. **Run Linter**:
+   ```bash
+   npm run lint
+   ```
+
+5. **Build for Production**:
+   ```bash
+   npm run build
+   ```

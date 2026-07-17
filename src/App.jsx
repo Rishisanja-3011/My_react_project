@@ -1,11 +1,12 @@
 import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import About from './components/About'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
 import NavBar from './components/NavBar'
+import Footer from './components/Footer'
+import Home from './components/Home'
+import Projects from './components/Projects'
+import Contact from './components/Contact'
+import NotFound from './components/NotFound'
 
 const portfolio = {
   name: 'RISHI SANJA',
@@ -57,24 +58,40 @@ function App() {
   return (
     <div className="page-shell">
       <NavBar themeColor={headerTheme} onThemeChange={setHeaderTheme} />
-      <Header
-        name={portfolio.name}
-        role={portfolio.role}
-        tagline={portfolio.tagline}
-        themeColor={headerTheme}
-      />
-      <main className="page-content">
-        <About
-          name={portfolio.name}
-          bio={portfolio.bio}
-          location={portfolio.location}
+      <Routes>
+        <Route
+          path="/"
+          element={<Home portfolio={portfolio} themeColor={headerTheme} />}
         />
-        <Skills skillList={portfolio.skills} />
-        <Projects projects={portfolio.projects} />
-      </main>
+        <Route
+          path="/projects"
+          element={
+            <main className="page-content">
+              <Projects projects={portfolio.projects} />
+            </main>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <main className="page-content">
+              <Contact email={portfolio.email} />
+            </main>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <main className="page-content">
+              <NotFound />
+            </main>
+          }
+        />
+      </Routes>
       <Footer name={portfolio.name} email={portfolio.email} />
     </div>
   )
 }
 
 export default App
+
